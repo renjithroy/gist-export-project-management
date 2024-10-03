@@ -4,6 +4,13 @@
 
 This project allows users to manage multiple projects and their associated tasks. The application provides functionality for creating, updating, managing tasks, and exporting project summaries as secret gists on GitHub. It is built using Vue.js, Express.js, and MySQL.
 
+Try out the app here:
+https://gist-export-project-management.vercel.app/
+
+Test Credentials:
+Username: Alex
+Password: Alex
+
 ## Features
 
 1. **Project Management**:
