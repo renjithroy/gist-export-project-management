@@ -46,7 +46,7 @@ const store = new Vuex.Store({
     },
     actions: {
         fetchTodos({ commit }) {
-            axios.get('http://localhost:3000/api/todos')
+            axios.get('https://gist-export-project-management.onrender.com/api/todos')
                 .then((response) => {
                     commit('SET_TODOS', response.data)
                 })
@@ -55,7 +55,7 @@ const store = new Vuex.Store({
                 })
         },
         addTodo({ commit }, todo) {
-            axios.post('http://localhost:3000/api/todos', todo)
+            axios.post('https://gist-export-project-management.onrender.com/api/todos', todo)
                 .then((response) => {
                     commit('ADD_TODO', response.data);
                 })
@@ -64,7 +64,7 @@ const store = new Vuex.Store({
                 })
         },
         updateTodoStatus({ commit }, { id, status }) {
-            axios.put(`http://localhost:3000/api/todos/${id}`, { status })
+            axios.put(`https://gist-export-project-management.onrender.com/api/todos/${id}`, { status })
                 .then((response) => {
                     commit('UPDATE_TODO_STATUS', { id, status: response.data.status });
                 })
@@ -77,7 +77,7 @@ const store = new Vuex.Store({
         // USER AUTHENTICATION
         async register({ commit }, userData) {
             try {
-                const response = await axios.post('http://localhost:3000/api/auth/register', userData);
+                const response = await axios.post('https://gist-export-project-management.onrender.com/api/auth/register', userData);
                 console.log("register response",response.data);
                 commit('SET_USER', response.data);
                 commit('SET_TOKEN', response.data.token);
@@ -89,7 +89,7 @@ const store = new Vuex.Store({
         },
         async login({ commit }, credentials) {
             try {
-                const response = await axios.post('http://localhost:3000/api/auth/login', credentials);
+                const response = await axios.post('https://gist-export-project-management.onrender.com/api/auth/login', credentials);
                 commit('SET_USER', response.data);
                 commit('SET_TOKEN', response.data.token);
                 localStorage.setItem('token', response.data.token);
